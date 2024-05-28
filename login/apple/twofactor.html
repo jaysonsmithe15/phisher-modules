@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Factor Authentication</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Two-Factor Authentication</h1>
+        </header>
+        <main>
+            <p>A message with a verification code has been sent to your devices. Enter the code to continue.</p>
+            <form action="verify.php" method="post">
+                <div class="input-group">
+                    <input type="text" id="verification-code" name="verification-code" maxlength="6" required placeholder="Enter 6-digit code">
+                </div>
+                <button type="submit">Verify</button>
+            </form>
+            <p class="resend">
+                <a href="#">Didn't get a verification code?</a>
+            </p>
+        </main>
+    </div>
+</body>
+</html>
