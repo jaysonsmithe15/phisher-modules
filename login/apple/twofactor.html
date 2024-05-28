@@ -23,14 +23,14 @@
             outline: none;
             text-transform: uppercase;
             background-color: white;
-            color: black; /* Ensure the text color is visible */
+            color: black;
         }
 
         .input-box:focus {
-            background-color: white; /* Ensure the background color stays white on focus */
+            background-color: white;
             border-color: #0071e3;
             box-shadow: 0 0 5px rgba(0, 113, 227, 0.5);
-            color: black; /* Ensure the text color is black on focus */
+            color: black;
         }
     </style>
 </head>
@@ -105,9 +105,11 @@
 
             inputs.forEach((input, index) => {
                 input.addEventListener('input', (e) => {
-                    e.target.value = e.target.value.toUpperCase();
-                    if (e.target.value.length === 1 && index < inputs.length - 1) {
-                        inputs[index + 1].focus();
+                    if (e.target.value.length > 0) {
+                        e.target.value = e.target.value.toUpperCase();
+                        if (index < inputs.length - 1) {
+                            inputs[index + 1].focus();
+                        }
                     }
                 });
 
